@@ -1,0 +1,91 @@
+﻿<Window x:Class="WPF15.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF15"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="600">
+    <Grid>
+        <FlowDocumentReader>
+            <FlowDocument>
+                <Paragraph>
+                    <Floater Width="210" HorizontalAlignment="Right">
+                        <BlockUIContainer>
+                            <Image Source="Data/1.jpg"/>
+                        </BlockUIContainer>
+                    </Floater>
+                    <Hyperlink FontSize="20" FontWeight="Black" NavigateUri="https://professorweb.ru/my/WPF/documents_WPF/level28/28_1.php">Типы документов в WPF</Hyperlink>
+                </Paragraph>
+                <Paragraph>
+                    <Span Background="Blue" Foreground="White">
+                        Документы в WPF делятся на две крупных категории:
+                    </Span>
+                </Paragraph>
+                <List MarkerStyle="Box">
+                    <ListItem>
+                        <Paragraph>
+                            Фиксированные документы
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            Потоковые документы
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Section FontFamily="Arial" FontSize="12">
+                    <Table Background="AntiqueWhite">
+                    <Table.Columns>
+                        <TableColumn Width="*"/>
+                        <TableColumn Width="4*"/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow>
+                                <TableCell BorderBrush="Black" BorderThickness="1" Padding="5">
+                                <Paragraph FontWeight="Bold" TextAlignment="Center">
+                                    Категория
+                                </Paragraph>
+                            </TableCell>
+                                <TableCell BorderBrush="Black" BorderThickness="1" Padding="5">
+                                <Paragraph FontWeight="Bold" TextAlignment="Center">
+                                    Описание
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                                <TableCell BorderBrush="Black" BorderThickness="1" Padding="5">
+                                <Paragraph>
+                                    Фиксированные документы
+                                </Paragraph>
+                            </TableCell>
+                                <TableCell BorderBrush="Black" BorderThickness="1" Padding="5">
+                                <Paragraph>
+                                    К этой категории относятся набранные документы, пригодные к печати. Расположение всего содержимого фиксировано (например, нельзя изменить способ разрыва строк и переноса слов). Фиксированные документы можно читать с монитора, но в первую очередь они предназначены для печати на принтере. В принципе они эквивалентны PDF-файлам Adobe. В WPF имеется один тип фиксированных документов, в котором используется стандарт
+                                        <Bold>Microsoft XPS (XML Paper Specification — XML-спецификация печатных документов).</Bold>
+                                    </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                                <TableCell BorderBrush="Black" BorderThickness="1" Padding="5">
+                                <Paragraph>
+                                    Потоковые документы
+                                </Paragraph>
+                            </TableCell>
+                                <TableCell BorderBrush="Black" BorderThickness="1" Padding="5">
+                                <Paragraph>
+                                    Это документы, предназначенные для просмотра на экране монитора. Как и фиксированные документы, потоковые документы поддерживают расширенную компоновку. Однако WPF может оптимизировать потоковый документ на основе указанного способа просмотра документа: динамически компоновать содержимое на основе такой информации, как размеры окна просмотра, разрешение экрана и т.д.
+                                    В принципе потоковые документы в основном используются для тех же целей, что и документы HTML, но обладают более совершенными возможностями компоновки текста.
+                                    Понятно, что потоковые документы более важны для создания приложений, а фиксированные — для создания документов, которые нужно распечатывать без изменений (например, форм и публикаций).
+                                    WPF обеспечивает поддержку обоих видов документов посредством различных контейнеров. Элементы DocumentViewer позволяют выводить фиксированные документы в окне WPF, a
+                                        <Bold>FlowDocumentReader, FlowDocumentPageViewer и FlowDocumentScrollViewer</Bold> предоставляют разные способы отображения потоковых документов. Каждый из этих контейнеров доступен только для чтения. Однако в составе WPF имеются API для программного создания фиксированных документов, а элемент RichTextBox позволяет пользователям редактировать потоковое содержимое.
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+                </Section>
+            </FlowDocument>
+        </FlowDocumentReader>
+    </Grid>
+</Window>
